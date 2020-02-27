@@ -10,7 +10,7 @@ import Form from './components/stages'
 const App = () => {
   return(
     <div className={''}>
-      <Form />
+      <Hello />
     </div>
   )
 }

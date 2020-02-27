@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import fields from './fields'
@@ -14,10 +14,11 @@ const Error = styled.p`
 `
 
 export default ({ title, }) => {
+  const [bool, setBool ] = useState(false)
   return(
     <InputWrapper>
-      <input />
-      <Label labelText={'Some text'}/>
+      <input onFocus={() => {setBool(true)}} onBlur={()=> {setBool(false)}}/>
+      <Label bool={bool} labelText={'Some text'}/>
       <Error>{fields[0].label}</Error>
     </InputWrapper>
   )
