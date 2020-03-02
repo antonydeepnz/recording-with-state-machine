@@ -5,12 +5,14 @@
   "dependencies": {
     "i18next": "19.3.2",
     "mobx": "5.15.4",
+    "mobx-react": "^6.1.8",
     "mobx-react-form": "2.0.8",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-fsm": "^0.0.1",
     "react-is": "16.13.0",
-    "styled-components": "5.0.1"
+    "styled-components": "5.0.1",
+    "yup": "^0.28.1"
   },
   "scripts": {
     "start": "react-scripts start",

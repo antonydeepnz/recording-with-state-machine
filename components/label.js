@@ -11,7 +11,7 @@ const Label = styled.label`
   user-select: none;
   font-size: ${props => props.animate ? "15px" : "20px"};
   transform: ${props => props.animate ? "translate(-0.5em,-1.1em)" : "translate(0px,0px)"};
-  transition: font-size 1s, transform 1s;
+  transition: font-size 0.5s, transform 0.5s;
 `
 
 export default ({ htmlFor, labelText, animate }) => {
