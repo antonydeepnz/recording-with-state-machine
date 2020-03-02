@@ -1,28 +1,42 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { observer } from 'mobx-react'
 import { types } from 'mobx-state-tree'
 
-const field = types.model({
+export const field = types.model({
   name: types.string,
-  value: '',
+  value: types.string,
   isPristine: true,
   touched: false
 })
 .actions(self => ({
-  setValue(text){self.value = text}
+  setValue(text){return self.value = text},
+  setTouched: () => {self.touched = true}
+}))
+.views(self => ({
+  get setvalue(){return self.value}
 }))
 
 export default observer(({ name }) => {
+  const ref = useRef(null)
+
   const self = field.create({
     name: name
   })
   const handleChange = (e) => {
     self.setValue(e.target.value)
   }
+
+  const handleFocus = () => {
+    self.setTouched()
+ 
+  }
   return(
     <>
-      <input value={self.value}
+      <input ref={ref}
+          onFocus={handleFocus}
           onChange={handleChange}/>
+      <p>{self.setvalue}</p>   
+      { self.touched && <p>{self.setvalue}</p> }
     </>
   )
 })

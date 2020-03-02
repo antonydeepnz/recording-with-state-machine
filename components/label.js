@@ -16,6 +16,6 @@ const Label = styled.label`
 
 export default ({ htmlFor, labelText, animate }) => {
   return(
-    <Label htmlFor={htmlFor} animate={animate}>{labelText}</Label>
+    <Label for={htmlFor} animate={animate}>{labelText}</Label>
   )
 }
