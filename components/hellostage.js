@@ -9,7 +9,6 @@ export default () => {
     <Wrapper>
       <Input />
       <Input />
-      <Input />
     </Wrapper>
   )
 }

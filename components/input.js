@@ -6,6 +6,7 @@ import Label from './label'
 
 const InputWrapper = styled.div`
   padding: 10px 0px 10px 10px;
+  position: relative;
 `
 
 const Error = styled.p`
@@ -13,12 +14,12 @@ const Error = styled.p`
   font-size: 0.7em;
 `
 
-export default ({ title, }) => {
+export default ({ title, labelText }) => {
   const [bool, setBool ] = useState(false)
   return(
     <InputWrapper>
       <input onFocus={() => {setBool(true)}} onBlur={()=> {setBool(false)}}/>
-      <Label bool={bool} labelText={'Some text'}/>
+      <Label animate={bool} labelText={'Some text'}/>
       <Error>{fields[0].label}</Error>
     </InputWrapper>
   )
