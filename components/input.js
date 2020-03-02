@@ -18,10 +18,10 @@ const Error = styled.p`
   transition: opacity 0.5s; 
 `
 
-export default observer(({ title, labelText }) => {
+export default observer(({ field }) => {
   const [bool, setBool ] = useState(false)
   const [text, setText] = useState('')
-  const [error, setErr] = useState(false)
+  const [error, setErr] = useState(true)
   const handleBlur = () => {
     text
       ? setBool(true)
@@ -29,15 +29,17 @@ export default observer(({ title, labelText }) => {
   }
   const handleChange = (e) => {
     setText(e.target.value)
-    text
-      ? setErr(true)
-      : setErr(false)
+    field.showErrors(true)
+    console.log(field.values())
+    // text
+    //   ? setErr(true)
+    //   : setErr(false)
   }
   return(
     <InputWrapper>
-      <input onFocus={() => {setBool(true)}} onBlur={handleBlur} onChange={handleChange}/>
-      <Label animate={bool} labelText={'Some text'}/>
-      <Error show={error}>{error && fields[0].error}</Error>
+      <input {...field.bind()} onFocus={() => {setBool(true)}} onBlur={handleBlur} onChange={handleChange}/>
+      <Label animate={bool} labelText={field.label}/>
+      <Error show={error}>{field.error}</Error>
     </InputWrapper>
   )
 })

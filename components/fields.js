@@ -2,14 +2,15 @@ import { t } from 'i18next'
 
 export default [{
   name: 'name',
-  label: t('name'),
-  placeholder: 'Insert Email',
-  error: t('name.error')
+  label: 'Name',//t('name'),
+  // placeholder: 'Insert Email',
+  error: 'dfsdfdf'//t('name.error')
 },
 {
   name: 'telephone',
-  label: t('telephone'),
-  placeholder: 'Insert Email',
+  label: 'Tel',//t('telephone'),
+  // placeholder: 'Insert Email',
+  error: '111111'//t('name.error')
 },
 {
   name: 'email',
