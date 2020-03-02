@@ -4,13 +4,15 @@ export default [{
   name: 'name',
   label: 'Name',//t('name'),
   // placeholder: 'Insert Email',
-  error: 'dfsdfdf'//t('name.error')
+  error: 'dfsdfdf',//t('name.error')
+  rules: "required|number|between:5,25",
 },
 {
   name: 'telephone',
   label: 'Tel',//t('telephone'),
   // placeholder: 'Insert Email',
-  error: '111111'//t('name.error')
+  error: '111111',//t('name.error')
+  rules: "required|string|between:5,25",
 },
 {
   name: 'email',

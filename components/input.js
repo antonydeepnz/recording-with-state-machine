@@ -29,15 +29,13 @@ export default observer(({ field }) => {
   }
   const handleChange = (e) => {
     setText(e.target.value)
-    field.showErrors(true)
-    console.log(field.values())
     // text
     //   ? setErr(true)
     //   : setErr(false)
   }
   return(
     <InputWrapper>
-      <input {...field.bind()} onFocus={() => {setBool(true)}} onBlur={handleBlur} onChange={handleChange}/>
+      <input onFocus={() => {setBool(true)}} onBlur={handleBlur} onChange={handleChange}/>
       <Label animate={bool} labelText={field.label} htmlFor={field.name}/>
       <Error show={error}>{field.error}</Error>
     </InputWrapper>
