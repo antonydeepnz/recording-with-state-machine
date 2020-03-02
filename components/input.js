@@ -38,7 +38,7 @@ export default observer(({ field }) => {
   return(
     <InputWrapper>
       <input {...field.bind()} onFocus={() => {setBool(true)}} onBlur={handleBlur} onChange={handleChange}/>
-      <Label animate={bool} labelText={field.label}/>
+      <Label animate={bool} labelText={field.label} htmlFor={field.name}/>
       <Error show={error}>{field.error}</Error>
     </InputWrapper>
   )

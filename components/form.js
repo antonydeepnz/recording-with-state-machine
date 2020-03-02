@@ -1,8 +1,19 @@
 import MobxReactForm from 'mobx-react-form'
+import yup from 'mobx-react-form/lib/validators/YUP';
+import * as Yup from 'yup';
 
 import fields from './fields'
+import recordShema from './validation'
 
-const plugins = {}
+const plugins = {
+  // yup: yup({
+  //   package: Yup,
+  //   schema: recordShema,
+  //   extend: ({ validator, form }) => {
+  //    // access yup validator and form instances
+  //   },
+  // })
+  }
 
 const hooks = {
   onSuccess(form) {
