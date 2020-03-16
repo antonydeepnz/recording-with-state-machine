@@ -18,8 +18,6 @@ const getData = async () => {
 
 
 const App = () => {
-  useEffect(() => (getData()),[])
-
   return(
     <div className={''}>
       <Form form={form} />
