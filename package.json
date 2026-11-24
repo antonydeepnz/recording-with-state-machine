@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.2",
-    "i18next": "19.3.2",
+    "i18next": "26.3.4",
     "mobx": "5.15.4",
     "mobx-react": "6.1.8",
     "mobx-react-form": "2.0.8",
